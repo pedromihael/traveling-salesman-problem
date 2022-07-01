@@ -35,8 +35,9 @@ def read_params():
     print(f'min temperature: {t_min}')
     print(f'annealing ratio: {k}')
     print(f'number of iterations: {kt}')
+    print('calculating...')
 
-    return case, t_max, t_min, k, kt
+    return t_max, t_min, k, kt
 
 
 def generate_tsp_matrix(coordenates):
@@ -110,7 +111,7 @@ def get_best_neighbour(tsp, neighbours, T):
 
 def simanneal():
     coordenates = read_file()
-    case, t_max, t_min, annealing_ratio, n_iterations = read_params()
+    t_max, t_min, annealing_ratio, n_iterations = read_params()
     tsp_matrix = generate_tsp_matrix(coordenates)
 
     current_route_length = np.Infinity

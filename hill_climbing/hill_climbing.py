@@ -81,6 +81,9 @@ def get_best_neighbour(tsp, neighbours):
 
 def hill_climbing():
     coordenates = read_file()
+
+    print('calculating...')
+
     tsp_matrix = generate_tsp_matrix(coordenates)
     current_solution = generate_random_solution(tsp_matrix)
     current_route_length = get_route_length(tsp_matrix, current_solution)
@@ -98,4 +101,4 @@ def hill_climbing():
     return current_route_length
 
 
-print(hill_climbing())
+print(f'best solution cost: {hill_climbing()}')
